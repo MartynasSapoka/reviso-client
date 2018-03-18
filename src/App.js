@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter, Link, Route} from 'react-router-dom';
-import ClientTableContainer from "./components/ClientTable/ClientTableContainer";
+import ClientTableContainer from "./components/CustomerList/CustomerListContainer";
 import CustomerDetailsContainer from "./components/CustomerDetails/CustomerDetailsContainer";
 
 class App extends Component {

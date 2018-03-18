@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from 'react-redux'
-import ClientsTable from './ClientsTable';
+import ClientsTable from './CustomerList';
 import {createCustomer, fetchAllCustomers} from "../../actions/CustomerActions";
 
-class ClientsTableContainer extends React.Component {
+class CustomerListContainer extends React.Component {
   componentDidMount() {
     this.props.fetchData();
   }
@@ -21,12 +21,12 @@ const mapStateToProps = state => {
   }
 };
 
-ClientsTableContainer = connect(
+CustomerListContainer = connect(
   mapStateToProps,
   dispatch => ({
     fetchData: () => dispatch(fetchAllCustomers),
     createCustomer: customer => dispatch(createCustomer(customer))
   })
-)(ClientsTableContainer);
+)(CustomerListContainer);
 
-export default ClientsTableContainer;
+export default CustomerListContainer;

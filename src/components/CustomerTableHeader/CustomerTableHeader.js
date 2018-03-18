@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const JobsTableHeader = ({colNames}) => (
+const CustomerTableHeader = ({colNames}) => (
   <thead>
     <tr>
       {colNames.map((cn) => <th className="col-xs-3" key={cn}>{cn}</th>)}
@@ -9,8 +9,8 @@ const JobsTableHeader = ({colNames}) => (
   </thead>
 );
 
-JobsTableHeader.propTypes = {
+CustomerTableHeader.propTypes = {
   colNames: PropTypes.array.isRequired
 };
 
-export default JobsTableHeader;
+export default CustomerTableHeader;

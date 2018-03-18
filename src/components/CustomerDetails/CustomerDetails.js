@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CustomerDetails.css';
 import CustomerBillingRow from "./components/CustomerBillingRow";
 import NewBill from "./components/NewBill";
@@ -9,6 +10,11 @@ class CustomerDetails extends React.Component {
     super(props);
     this.state = {addNewBill: false}
   }
+
+  static propTypes = {
+    customer: PropTypes.object.isRequired,
+    updateCustomer: PropTypes.func.isRequired
+  };
 
   render() {
     const {customer} = this.props;

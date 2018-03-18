@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import JobsTableHeader from "../JobsTableHeader/JobsTableHeader";
+import JobsTableHeader from "../CustomerTableHeader/CustomerTableHeader";
 import CustomerRow from "../CustomerRow/CustomerRow";
 import SearchFieldContainer from "../SearchField/SearchFieldContainer";
 import InsertNewRow from "./components/InsertNewRow";
 
-class ClientsTable extends React.Component {
+class CustomerTable extends React.Component {
 
   constructor(props) {
     super(props);
@@ -39,9 +39,8 @@ class ClientsTable extends React.Component {
   }
 }
 
-
-ClientsTable.propTypes = {
+CustomerTable.propTypes = {
   customers: PropTypes.array.isRequired
 };
 
-export default ClientsTable;
+export default CustomerTable;
