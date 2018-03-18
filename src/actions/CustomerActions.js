@@ -8,10 +8,8 @@ const receiveAllCustomers = (customers) => ({
 
 export const fetchAllCustomers = async (dispatch) => {
   const response = await HttpClient.get('http://localhost:8080/api/clients');
-  const json = await response.json();
-  dispatch(receiveAllCustomers(json));
+  dispatch(receiveAllCustomers(response));
 };
-
 
 export const FETCH_CUSTOMER = 'FETCH_CUSTOMER';
 const receiveCustomer = customer => ({
@@ -21,5 +19,10 @@ const receiveCustomer = customer => ({
 
 export const createCustomer = (customer) => async (dispatch) => {
   const response = await HttpClient.post('http://localhost:8080/api/clients', customer);
+  dispatch(receiveCustomer(response));
+};
+
+export const fetchCustomer = (customerId) => async (dispatch) => {
+  const response = await HttpClient.get(`http://localhost:8080/api/clients/${customerId}`);
   dispatch(receiveCustomer(response));
 };
