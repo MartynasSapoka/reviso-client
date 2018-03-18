@@ -24,13 +24,18 @@ class ClientsTable extends React.Component {
             {customers.map(j =>
               <CustomerRow customer={j} key={j._id}/>
             )}
-            {this.state.insertNew && <InsertNewRow onSave={this.props.createCustomer}/>}
+            {this.state.insertNew && <InsertNewRow onSave={this.onCreateCustomer}/>}
             </tbody>
           </table>
           <button className="btn btn-default" onClick={() => this.setState({insertNew: true})}>Add</button>
         </div>
       </div>
     )
+  }
+
+  onCreateCustomer = (customer) => {
+    this.props.createCustomer(customer);
+    this.setState({insertNew: false})
   }
 }
 
