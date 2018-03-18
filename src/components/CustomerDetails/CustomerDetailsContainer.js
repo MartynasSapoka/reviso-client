@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import CustomerDetails from './CustomerDetails';
-import {fetchCustomer} from "../../actions/CustomerActions";
+import {fetchCustomer, updateCustomer} from "../../actions/CustomerActions";
 import React from "react";
 import {withRouter} from "react-router-dom";
 
@@ -11,8 +11,9 @@ class CustomerDetailsContainer extends React.Component {
   }
 
   render() {
+    const {history, location, match, fetchCustomer, ...rest} = this.props;
     return(
-      this.props.customer ? <CustomerDetails customer={this.props.customer}/> : <p>Loading...</p>
+      this.props.customer ? <CustomerDetails {...rest}/> : <p>Loading...</p>
     )
   }
 }
@@ -28,7 +29,8 @@ CustomerDetailsContainer =
   withRouter(connect(
     mapStateToProps,
     dispatch => ({
-      fetchCustomer: (customerId) => dispatch(fetchCustomer(customerId))
+      fetchCustomer: (customerId) => dispatch(fetchCustomer(customerId)),
+      updateCustomer: (customer) => dispatch(updateCustomer(customer))
     })
   )(CustomerDetailsContainer));
 

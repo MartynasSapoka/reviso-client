@@ -19,7 +19,7 @@ class ClientsTable extends React.Component {
         <div className="col-xs-12">
           <SearchFieldContainer/>
           <table className="table table-striped jobs-table">
-            <JobsTableHeader colNames={['Company', 'Total Hours']}/>
+            <JobsTableHeader colNames={['Company', 'Total Hours', 'Total Amount']}/>
             <tbody className="text-left">
             {customers.map(j =>
               <CustomerRow customer={j} key={j._id}/>

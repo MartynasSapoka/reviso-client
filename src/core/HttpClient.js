@@ -7,5 +7,13 @@ export default {
       'Content-Type': 'application/json'
     },
     mode: 'cors'
+  }).then(response => response.json()),
+  put: (url, payload) => fetch(url, {
+    method: 'PUT',
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    mode: 'cors'
   }).then(response => response.json())
 }

@@ -7,6 +7,7 @@ const CustomerRow = ({customer}) => (
   <tr className="JobRow">
     <td><Link to={`customers/${customer._id}`}>{customer.name}</Link></td>
     <td>{customer.totalHours}</td>
+    <td>€{customer.billings.reduce((total, b) => total + b.total, 0)}</td>
   </tr>
 );
 

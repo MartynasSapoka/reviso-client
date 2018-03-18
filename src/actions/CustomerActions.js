@@ -26,3 +26,14 @@ export const fetchCustomer = (customerId) => async (dispatch) => {
   const response = await HttpClient.get(`http://localhost:8080/api/clients/${customerId}`);
   dispatch(receiveCustomer(response));
 };
+
+// export const UPDATE_CUSTOMER = 'UPDATE_CUSTOMER';
+// const updateCustomerAction = (customer) => ({
+//   type: FETCH_CUSTOMER,
+//   data: customer
+// });
+
+export const updateCustomer = (customer) => async (dispatch) => {
+  const response = await HttpClient.put(`http://localhost:8080/api/clients/${customer._id}`, customer);
+  dispatch(receiveCustomer(response));
+};
