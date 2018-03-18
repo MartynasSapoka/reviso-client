@@ -17,14 +17,7 @@ class ClientsTableContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    customers: state.customers.map(c =>  {
-      c.totalHours = c.billings.reduce((total, b) => total + b.hours, 0);
-      c.billings.map(b => {
-        b.total = b.hours * b.hourlyRate;
-        return b;
-      });
-      return c;
-    })
+    customers: state.customers
   }
 };
 
