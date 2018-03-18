@@ -17,7 +17,9 @@ class CustomerListContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    customers: state.filter.text ? state.customers.filter(c => c.name.toLowerCase().includes(state.filter.text.toLowerCase())) : state.customers
+    customers: state.filter.text ?
+      state.customers.filter(c => c.name.toLowerCase().includes(state.filter.text.toLowerCase()))
+      : state.customers
   }
 };
 

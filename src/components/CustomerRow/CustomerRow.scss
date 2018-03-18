@@ -1,0 +1,12 @@
+.CustomerRow {
+  margin: .5rem 0;
+
+  td {
+    padding: 1rem;
+  }
+
+  td:last-child {
+    text-align: right;
+    padding-right: 2rem;
+  }
+}
