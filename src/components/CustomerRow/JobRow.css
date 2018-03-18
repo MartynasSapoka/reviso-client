@@ -1,0 +1,6 @@
+.JobRow {
+  margin: .5rem 0; }
+  .JobRow td {
+    padding: 1rem; }
+    .JobRow td .logo {
+      max-width: 150px; }
