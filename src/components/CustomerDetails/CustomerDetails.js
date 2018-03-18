@@ -15,19 +15,20 @@ class CustomerDetails extends React.Component {
     return(
       <div className="customer-details">
         <div className="container">
-          <div className="col-xs-12 col-sm-6 text-left">
+          <div className="col-xs-12 text-left">
             <h1>{customer.name}</h1>
             <table className="table table-striped">
               <thead>
                 <tr>
-                  <td>Date</td>
-                  <td>Hours</td>
-                  <td>Hourly Rate</td>
-                  <td>Total</td>
+                  <td className="col-xs-2">Date</td>
+                  <td className="col-xs-2">Hours</td>
+                  <td className="col-xs-2">Hourly Rate</td>
+                  <td className="col-xs-2">Total</td>
+                  <td className="col-xs-1"/>
                 </tr>
               </thead>
               <tbody>
-              {customer.billings.map(b => <CustomerBillingRow billing={b} key={b.timestamp}/>)}
+              {customer.billings.map(b => <CustomerBillingRow billing={b} key={b._id} onRemove={this.onRemove}/>)}
               {this.state.addNewBill && <NewBill onSave={this.onSave.bind(this)}/>}
               </tbody>
             </table>
@@ -39,8 +40,13 @@ class CustomerDetails extends React.Component {
   }
 
   onAddBill = () => this.setState({addNewBill: true});
+
   onSave = (bill) => {
     this.props.updateCustomer({...this.props.customer, billings: [...this.props.customer.billings, bill]})
+  };
+
+  onRemove = (billing) => {
+    this.props.updateCustomer({...this.props.customer, billings: this.props.customer.billings.filter(b => b._id !== billing._id)});
   }
 }
 

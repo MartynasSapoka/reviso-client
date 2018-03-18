@@ -16,11 +16,11 @@ class NewBill extends React.Component {
     return(
       <tr>
         <td>
-          <label>Hours</label>
+          <p>Hours</p>
           <input type="number" value={this.state.hours} onChange={e => this.setState({hours: e.target.value})}/>
         </td>
         <td>
-          <label>Hourly Rate</label>
+          <p>Hourly Rate</p>
           <input type="number" value={this.state.hourlyRate} onChange={e => this.setState({hourlyRate: e.target.value})}/>
         </td>
         <td><button className="btn btn-default" onClick={this.onSave}>Save</button></td>
