@@ -1,10 +1,10 @@
 import React from 'react';
-import {throttle} from 'lodash';
+import {debounce} from 'lodash';
 import './SearchField.css'
 
 const SearchField = ({changeHandler}) => {
 
-  const onChangeThrottled = throttle(changeHandler, 500, {leading: false});
+  const onChangeThrottled = debounce(changeHandler, 500, {leading: false, trailing: true});
 
   return (
     <div className="SearchField">
