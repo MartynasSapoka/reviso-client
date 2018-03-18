@@ -27,13 +27,18 @@ export const fetchCustomer = (customerId) => async (dispatch) => {
   dispatch(receiveCustomer(response));
 };
 
-// export const UPDATE_CUSTOMER = 'UPDATE_CUSTOMER';
-// const updateCustomerAction = (customer) => ({
-//   type: FETCH_CUSTOMER,
-//   data: customer
-// });
-
 export const updateCustomer = (customer) => async (dispatch) => {
   const response = await HttpClient.put(`http://localhost:8080/api/clients/${customer._id}`, customer);
   dispatch(receiveCustomer(response));
+};
+
+export const REMOVE_CUSTOMER = 'REMOVE_CUSTOMER';
+const removeCustomerAction = (customer) => ({
+  type: REMOVE_CUSTOMER,
+  data: customer
+});
+
+export const removeCustomer = (customer) => async (dispatch) => {
+  await HttpClient.delete(`http://localhost:8080/api/clients/${customer._id}`);
+  dispatch(removeCustomerAction(customer));
 };

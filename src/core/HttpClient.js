@@ -15,5 +15,12 @@ export default {
       'Content-Type': 'application/json'
     },
     mode: 'cors'
+  }).then(response => response.json()),
+  delete: (url) => fetch(url, {
+    method: 'delete',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    mode: 'cors'
   }).then(response => response.json())
 }

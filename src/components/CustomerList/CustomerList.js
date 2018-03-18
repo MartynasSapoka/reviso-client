@@ -5,7 +5,7 @@ import CustomerRow from "../CustomerRow/CustomerRow";
 import SearchFieldContainer from "../SearchField/SearchFieldContainer";
 import InsertNewRow from "./components/InsertNewRow";
 
-class CustomerTable extends React.Component {
+class CustomerList extends React.Component {
 
   constructor(props) {
     super(props);
@@ -22,7 +22,7 @@ class CustomerTable extends React.Component {
             <JobsTableHeader colNames={['Company', 'Total Hours', 'Total Amount']}/>
             <tbody className="text-left">
             {customers.map(j =>
-              <CustomerRow customer={j} key={j._id}/>
+              <CustomerRow customer={j} key={j._id} removeCustomer={this.props.removeCustomer}/>
             )}
             {this.state.insertNew && <InsertNewRow onSave={this.onCreateCustomer}/>}
             </tbody>
@@ -36,11 +36,13 @@ class CustomerTable extends React.Component {
   onCreateCustomer = (customer) => {
     this.props.createCustomer(customer);
     this.setState({insertNew: false})
-  }
+  };
 }
 
-CustomerTable.propTypes = {
-  customers: PropTypes.array.isRequired
+CustomerList.propTypes = {
+  customers: PropTypes.array.isRequired,
+  createCustomer: PropTypes.func.isRequired,
+  removeCustomer: PropTypes.func.isRequired
 };
 
-export default CustomerTable;
+export default CustomerList;
