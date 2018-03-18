@@ -5,6 +5,7 @@ export default {
     body: JSON.stringify(payload),
     headers: {
       'Content-Type': 'application/json'
-    }
-  })
+    },
+    mode: 'cors'
+  }).then(response => response.json())
 }
