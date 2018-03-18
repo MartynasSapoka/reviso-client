@@ -10,7 +10,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <header className="App-header">
-            <Link to="/"><h1 className="App-title">Give Me My Money</h1></Link>
+            <Link to="/"><h1 className="App-title">Customer Billing</h1></Link>
           </header>
           <Route exact path="/" component={ClientTableContainer}/>
           <Route path="/customers/:customerId" component={CustomerDetailsContainer}/>
