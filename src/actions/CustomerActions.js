@@ -21,6 +21,5 @@ const receiveCustomer = customer => ({
 
 export const createCustomer = (customer) => async (dispatch) => {
   const response = await HttpClient.post('http://localhost:8080/api/clients', customer);
-  const json = await response.json();
-  dispatch(receiveCustomer(json));
+  dispatch(receiveCustomer(response));
 };

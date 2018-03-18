@@ -5,7 +5,7 @@ const customers = (state = [], action) => {
     case FETCH_ALL_CUSTOMERS:
       return action.customers;
     case FETCH_CUSTOMER:
-      return [...state, ...action.data];
+      return [...state, action.data];
     default: return state;
   }
 };

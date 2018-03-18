@@ -16,8 +16,9 @@ class InsertNewRow extends React.Component {
     )
   }
   onSave = () => {
-    if (this.state.name)
+    if (this.state.name) {
       this.props.onSave(this.state);
+    }
   };
   onChangeName = e => this.setState({name: e.target.value})
 }
