@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './CustomerBillingRow.css';
+import moment from 'moment';
 
 const CustomerBillingRow = ({billing, onRemove}) => (
   <tr className="CustomerBillingRow">
-    <td>{billing.timestamp}</td>
+    <td>{moment(billing.timestamp).format('DD-MM-YYYY')}</td>
     <td>{billing.hours}</td>
     <td>{billing.hourlyRate}</td>
     <td>€{billing.hours * billing.hourlyRate}</td>
