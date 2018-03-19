@@ -1,7 +1,7 @@
-#Reviso Code Test (Client) 
+# Reviso Code Test (Client) 
 
-##Install: 
+## Install: 
 - yarn install
 
-##Run: 
+## Run: 
 - yarn start
