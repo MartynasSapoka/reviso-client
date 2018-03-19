@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import JobsTableHeader from "../CustomerTableHeader/CustomerTableHeader";
-import CustomerRow from "../CustomerRow/CustomerRow";
+import JobsTableHeader from "./components/CustomerTableHeader/CustomerTableHeader";
+import CustomerRow from "./components/CustomerRow/CustomerRow";
 import SearchFieldContainer from "../SearchField/SearchFieldContainer";
 import InsertNewRow from "./components/InsertNewRow";
 
