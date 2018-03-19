@@ -1,0 +1,6 @@
+.action-buttons {
+  text-align: right;
+  padding-right: 2rem;
+  vertical-align: middle; }
+  .action-buttons button {
+    margin: 0 .5rem; }

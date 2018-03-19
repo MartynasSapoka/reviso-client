@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import JobsTableHeader from "./components/CustomerTableHeader/CustomerTableHeader";
 import CustomerRow from "./components/CustomerRow/CustomerRow";
 import SearchFieldContainer from "../SearchField/SearchFieldContainer";
-import InsertNewRow from "./components/InsertNewRow";
+import InsertNewRow from "./components/AddCustomer";
 
 class CustomerList extends React.Component {
 
@@ -11,6 +11,12 @@ class CustomerList extends React.Component {
     super(props);
     this.state = {insertNew: false}
   }
+
+  static propTypes = {
+    customers: PropTypes.array.isRequired,
+    createCustomer: PropTypes.func.isRequired,
+    removeCustomer: PropTypes.func.isRequired
+  };
 
   render() {
     const {customers} = this.props;
@@ -24,7 +30,7 @@ class CustomerList extends React.Component {
             {customers.map(j =>
               <CustomerRow customer={j} key={j._id} removeCustomer={this.props.removeCustomer}/>
             )}
-            {this.state.insertNew && <InsertNewRow onSave={this.onCreateCustomer}/>}
+            {this.state.insertNew && <InsertNewRow onSave={this.onCreateCustomer} onCancel={this.onCancelCreateCustomer}/>}
             </tbody>
           </table>
           <button className="btn btn-default" onClick={() => this.setState({insertNew: true})}>Add</button>
@@ -37,12 +43,8 @@ class CustomerList extends React.Component {
     this.props.createCustomer(customer);
     this.setState({insertNew: false})
   };
-}
 
-CustomerList.propTypes = {
-  customers: PropTypes.array.isRequired,
-  createCustomer: PropTypes.func.isRequired,
-  removeCustomer: PropTypes.func.isRequired
-};
+  onCancelCreateCustomer = () => this.setState({insertNew: false});
+}
 
 export default CustomerList;

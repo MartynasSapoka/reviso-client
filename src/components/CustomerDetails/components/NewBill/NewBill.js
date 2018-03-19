@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import './NewBill.css'
 class NewBill extends React.Component {
 
   constructor(props) {
@@ -14,7 +14,11 @@ class NewBill extends React.Component {
 
   render() {
     return(
-      <tr>
+      <tr className="NewBill">
+        <td>
+          <p>Date</p>
+          <input type="date" value={this.state.timestamp} onChange={e => this.setState({timestamp: e.target.value})}/>
+        </td>
         <td>
           <p>Hours</p>
           <input type="number" value={this.state.hours} onChange={e => this.setState({hours: e.target.value})}/>
@@ -23,7 +27,7 @@ class NewBill extends React.Component {
           <p>Hourly Rate</p>
           <input type="number" value={this.state.hourlyRate} onChange={e => this.setState({hourlyRate: e.target.value})}/>
         </td>
-        <td><button className="btn btn-default" onClick={this.onSave}>Save</button></td>
+        <td className="action-buttons"><button className="btn btn-default" onClick={this.onSave}>Save</button></td>
       </tr>
     )
   }
@@ -32,6 +36,7 @@ class NewBill extends React.Component {
     if (this.state.hours && this.state.hourlyRate) {
       this.props.onSave(this.state);
       this.setState({
+        timestamp: '',
         hours: '',
         hourlyRate: ''
       })

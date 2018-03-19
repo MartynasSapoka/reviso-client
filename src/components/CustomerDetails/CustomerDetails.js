@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './CustomerDetails.css';
-import CustomerBillingRow from "./components/CustomerBillingRow";
-import NewBill from "./components/NewBill";
+import CustomerBillingRow from "./components/CustomerBillingRow/CustomerBillingRow";
+import NewBill from "./components/NewBill/NewBill";
+import {Link} from "react-router-dom";
 
 class CustomerDetails extends React.Component {
 
@@ -22,6 +23,7 @@ class CustomerDetails extends React.Component {
       <div className="customer-details">
         <div className="container">
           <div className="col-xs-12 text-left">
+            <Link to={'/'}>&lt;&lt; Back</Link>
             <h1>{customer.name}</h1>
             <table className="table table-striped">
               <thead>
