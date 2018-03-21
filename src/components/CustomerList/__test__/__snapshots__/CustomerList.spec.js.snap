@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomerList Matches snapshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="col-xs-12"
+  >
+    <Connect(SearchField) />
+    <table
+      className="table table-striped jobs-table"
+    >
+      <CustomerTableHeader
+        colNames={
+          Array [
+            "Company",
+            "Total Hours",
+            "Total Amount",
+          ]
+        }
+      />
+      <tbody
+        className="text-left"
+      >
+        <CustomerRow
+          customer={
+            Object {
+              "_id": "5aaea959dd0322810727413c",
+              "billings": Array [
+                Object {
+                  "_id": "5aaebad500458185fb51e4cb",
+                  "hourlyRate": 8,
+                  "hours": 12,
+                  "timestamp": "2018-03-18T19:19:00.496Z",
+                },
+              ],
+              "name": "Test",
+            }
+          }
+          key="5aaea959dd0322810727413c"
+          removeCustomer={[Function]}
+        />
+        <CustomerRow
+          customer={
+            Object {
+              "_id": "5aaea9f2dd0322810727413e",
+              "billings": Array [
+                Object {
+                  "_id": "5ab0147d84a389b5aa597032",
+                  "hourlyRate": 10,
+                  "hours": 12,
+                  "timestamp": "2018-03-12T00:00:00.000Z",
+                },
+                Object {
+                  "_id": "5ab014b384a389b5aa597033",
+                  "hourlyRate": 9,
+                  "hours": 42,
+                  "timestamp": "2018-03-07T00:00:00.000Z",
+                },
+              ],
+              "name": "Reviso",
+            }
+          }
+          key="5aaea9f2dd0322810727413e"
+          removeCustomer={[Function]}
+        />
+      </tbody>
+    </table>
+    <button
+      className="btn btn-default"
+      onClick={[Function]}
+    >
+      Add
+    </button>
+  </div>
+</div>
+`;

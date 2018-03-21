@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux'
-import ClientsTable from './CustomerList';
+import CustomerList from './CustomerList';
 import {createCustomer, fetchAllCustomers, removeCustomer} from "../../actions/CustomerActions";
 
 class CustomerListContainer extends React.Component {
@@ -10,7 +10,7 @@ class CustomerListContainer extends React.Component {
 
   render() {
     const {fetchData, ...rest} = this.props;
-    return <ClientsTable {...rest}/>
+    return <CustomerList {...rest}/>
   }
 }
 
